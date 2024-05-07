@@ -1,10 +1,15 @@
 const express = require('express');
-const path = require('path'); // Modul 'path' diperlukan untuk menangani path file
 const app = express();
+
+const biodata = {
+    nama : "Aditya DIfa",
+    nim : "123210085",
+    versi : "app1"
+}
 
 app.get('/', (req, res) => {
   // Menggunakan path.resolve() untuk memastikan path file index.html benar
-  res.sendFile(path.resolve(__dirname, 'index.html'));
+  res.json(biodata);
 });
 
 // Listen to the App Engine-specified port, or 8080 otherwise
